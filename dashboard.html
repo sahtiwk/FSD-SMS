@@ -4,13 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            background-color: black;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th,td {
+            border: 1px solid;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: beige;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-        <a href="add-student.html">Add Student</a> <a href="logout.html">Logout</a>
-    </header>
-    <hr>
+    <nav>
+        <a href="add-student.html">Add Student</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <h1>Dashboard</h1>
 
     <table>
         <thead>
@@ -29,7 +74,7 @@
                 <td>23B81A05BC</td>
                 <td>8.84</td>
                 <td>CSE</td>
-                <td><a href="edit-student.html">edit </a> <a href="view-student.html">view</a></td>
+                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
             </tr>
 
             <tr>
@@ -37,7 +82,7 @@
                 <td>23B81A05AX</td>
                 <td>9.13</td>
                 <td>CSE</td>
-                <td><a href="edit-student.html">edit </a> <a href="view-student.html">view</a></td>
+                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
             </tr>
 
             <tr>
@@ -45,7 +90,7 @@
                 <td>23B81A05BQ</td>
                 <td>8.4</td>
                 <td>CSE</td>
-                <td><a href="edit-student.html">edit </a> <a href="view-student.html">view</a></td>
+                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
             </tr>
         </tbody>
 

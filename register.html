@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        input {
+            padding: 6px;
+            margin: 6px 0;
+            width: 220px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 14px;
+            background-color: black;
+            color:white;
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Register your account</h1>
-    <form>
-        <label for="uname">Username: </label> <input type="text" placeholder="username"><br>
-        <label for="uname">Email: </label> <input type="text" placeholder="email"><br>
-        <label for="uname">Password: </label> <input type="password"> <br>
-        <label for="uname">Confirm Password: </label> <input type="password"><br>
-        <a href="dashboard.html"><button type="button">Register</button></a>
-    </form>
-    <hr>
-    <p>Already have an account? Go here to <a href="login.html">login</a></p>
+    <div class="container">
+        <form action="dashboard.html">
+            <h2>Register your account</h2>
+            <label for="username">Username: </label> <input id="username" type="text" placeholder="username"><br>
+            <label for="email">Email: </label> <input id="email" type="text" placeholder="email"><br>
+            <label for="password">Password: </label> <input id="password" type="password"> <br>
+            <label for="confirm-password">Confirm Password: </label> <input id="confirm-password" type="password"><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <p class="note">Already have an account? Go here to <a href="login.html">login</a></p>
 </body>
 </html>

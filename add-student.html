@@ -4,18 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student Details</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: black;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        input {
+            padding: 6px;
+            margin: 6px 0;
+            width: 220px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Add Student details</h1>
-    </header>
-    <hr>
-    <form>
-        <label>Name: </label><input type="text"> <br>
-        <label>Roll No: </label><input type="text"> <br>
-        <label>CGPA: </label><input type="number"> <br>
-        <label>Branch: </label><input type="text"> <br>
-        <a href="view-student.html"><button type="button">Submit</button></a>
-    </form>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-student.html">Add Student</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <div class="container">
+        <form>
+            <h2>Add Student details</h2>
+            <label>Name: </label><input type="text"> <br>
+            <label>Roll No: </label><input type="text"> <br>
+            <label>CGPA: </label><input type="number"> <br>
+            <label>Branch: </label><input type="text"> <br>
+            <a href="view-student.html"><button type="button">Submit</button></a>
+        </form>
+    </div>
 </body>
 </html>

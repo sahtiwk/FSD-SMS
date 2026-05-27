@@ -4,37 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Student</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th,td {
+            border: 1px solid;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        button {
+            margin-top: 14px;
+            margin-right: 6px;
+            padding: 8px 14px;
+            cursor: pointer;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <h2>Student Details</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>Sathwik</td>
+            </tr>
+            <tr>
+                <th>Roll Number</th>
+                <td>23B81A05BC</td>
+            </tr>
+            <tr>
+                <th>CGPA</th>
+                <td>8.84</td>
+            </tr>
+            <tr>
+                <th>Branch</th>
+                <td>CSE</td>
+            </tr>
+        </table>
 
-    <header>
-        <h1>Student Details</h1>
-    </header>
-    <hr>
-    <table >
-        <tr>
-            <th>Name</th>
-            <td>Sathwik</td>
-        </tr>
-        <tr>
-            <th>Roll Number</th>
-            <td>23B81A05BC</td>
-        </tr>
-        <tr>
-            <th>CGPA</th>
-            <td>8.84</td>
-        </tr>
-        <tr>
-            <th>Branch</th>
-            <td>CSE</td>
-        </tr>
-    </table>
-    <br>
-    <button>Edit</button>
-    <a href="dashboard.html"><button type="button">Delete</button></a>
-    <br><br>
-    <a href="dashboard.html">Back to Dashboard</a>
+        <a href="edit-student.html"><button type="button">Edit</button></a>
+        <a href="dashboard.html"><button type="button">Delete</button></a>
+        <br>
+        <a class="back-link" href="dashboard.html">Back to Dashboard</a>
+    </div>
 
 </body>
 </html>

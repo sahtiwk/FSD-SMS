@@ -3,19 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Student</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        input {
+            padding: 6px;
+            margin: 6px 0;
+            width: 220px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 14px;
+            background-color: black;
+            color:white;
+            align-content: center;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Edit Student details</h1>
-    </header>
-    <hr>
-    <form>
-        <label>Name: </label><input type="text" placeholder="Sathwik"> <br>
-        <label>Roll No: </label><input type="text" placeholder="23B81A05BC"> <br>
-        <label>CGPA: </label><input type="number" placeholder="8.84"> <br>
-        <label>Branch: </label><input type="text" placeholder="CSE"> <br>
-        <a href="view-student.html"><button type="button">Submit</button></a>
-    </form>
+    <div class="container">
+        <form action="view-student.html">
+            <h2>Edit Student details</h2>
+            <label>Name: </label><input type="text" placeholder="Sathwik"> <br>
+            <label>Roll No: </label><input type="text" placeholder="23B81A05BC"> <br>
+            <label>CGPA: </label><input type="number" placeholder="8.84"> <br>
+            <label>Branch: </label><input type="text" placeholder="CSE"> <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
