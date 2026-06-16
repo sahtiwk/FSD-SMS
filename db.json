@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "username": "pavan",
+      "email": "pvn@gmail.com",
+      "password": "pvn",
+      "id": "Q0I1y7pCEYo"
+    }
+  ],
+  "students": [
+    {
+      "name": "Sathwik",
+      "rollNo": "23B81A05BC",
+      "cgpa": "8.84",
+      "branch": "CSE",
+      "id": "1"
+    },
+    {
+      "name": "pavan",
+      "rollNo": "23b81a05ah",
+      "cgpa": "9.24",
+      "branch": "CSE",
+      "id": "qgdwpKTUFtU"
+    },
+    {
+      "name": "sudharshan",
+      "rollNo": "23b81a05bq",
+      "cgpa": "8.48",
+      "branch": "CSE",
+      "id": "ry-Dz71ANHs"
+    },
+    {
+      "name": "mohit",
+      "rollNo": "23b81a05ax",
+      "cgpa": "9.2",
+      "branch": "CSE",
+      "id": "GoIOsIPUTjE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

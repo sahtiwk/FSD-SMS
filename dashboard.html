@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,8 @@
             background-color: white;
         }
 
-        th,td {
+        th,
+        td {
             border: 1px solid;
             padding: 10px;
             text-align: left;
@@ -49,6 +51,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="add-student.html">Add Student</a>
@@ -69,32 +72,34 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>Sathwik</td>
-                <td>23B81A05BC</td>
-                <td>8.84</td>
-                <td>CSE</td>
-                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
-            </tr>
 
-            <tr>
-                <td>Mohit</td>
-                <td>23B81A05AX</td>
-                <td>9.13</td>
-                <td>CSE</td>
-                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
-            </tr>
-
-            <tr>
-                <td>Sudharshan</td>
-                <td>23B81A05BQ</td>
-                <td>8.4</td>
-                <td>CSE</td>
-                <td><a href="edit-student.html">edit</a> <a href="view-student.html">view</a></td>
-            </tr>
         </tbody>
 
     </table>
 
+    <script>
+        async function fetchStudents() {
+            const tbody = document.querySelector('tbody');
+            await fetch("http://localhost:3001/students")
+                .then(response => response.json())
+                .then(students => {
+                    students.forEach(student => {
+                        tbody.innerHTML += `
+                    <tr>
+                        <td>${student.name}</td>
+                        <td>${student.rollNo}</td>
+                        <td>${student.cgpa}</td>
+                        <td>${student.branch}</td>
+                        <td><a href="edit-student.html?rollNo=${student.rollNo}">edit</a> <a href="view-student.html?rollNo=${student.rollNo}">view</a></td>
+                    </tr>
+                    `
+                    })
+                })
+        }
+
+        fetchStudents();
+    </script>
+
 </body>
+
 </html>

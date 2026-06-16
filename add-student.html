@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,6 +54,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="dashboard.html">Dashboard</a>
@@ -63,12 +65,34 @@
     <div class="container">
         <form>
             <h2>Add Student details</h2>
-            <label>Name: </label><input type="text"> <br>
-            <label>Roll No: </label><input type="text"> <br>
-            <label>CGPA: </label><input type="number"> <br>
-            <label>Branch: </label><input type="text"> <br>
-            <a href="view-student.html"><button type="button">Submit</button></a>
+            <label>Name: </label><input id="name" type="text"> <br>
+            <label>Roll No: </label><input id="rollNo" type="text"> <br>
+            <label>CGPA: </label><input id="cgpa" type="number"> <br>
+            <label>Branch: </label><input id="branch" type="text"> <br>
+            <button type="submit" onclick="add()">Submit</button>
         </form>
     </div>
+
+    <script>
+        async function add() {
+            name = document.getElementById("name").value;
+            rollNo = document.getElementById("rollNo").value;
+            cgpa = document.getElementById("cgpa").value;
+            branch = document.getElementById("branch").value;
+
+            const student = { name, rollNo, cgpa, branch };
+
+            await fetch('http://localhost:3001/students', {
+                method: 'POST', body: JSON.stringify(student)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Student added successfully");
+                    window.location.href = "dashboard.html"
+                })
+                .catch(err => console.log(err))
+        }
+    </script>
 </body>
+
 </html>

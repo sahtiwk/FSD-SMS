@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,11 +32,12 @@
             margin-top: 10px;
             padding: 8px 14px;
             background-color: black;
-            color:white;
+            color: white;
             align-content: center;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <form action="view-student.html">
@@ -44,8 +46,22 @@
             <label>Roll No: </label><input type="text" placeholder="23B81A05BC"> <br>
             <label>CGPA: </label><input type="number" placeholder="8.84"> <br>
             <label>Branch: </label><input type="text" placeholder="CSE"> <br>
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="editStudent()">Submit</button>
         </form>
     </div>
+
+    <script>
+        const rollNo = new URLSearchParams(window.location.search).get('rollNo');
+        async function editStudent() {
+            await fetch(`http://localhost:3001/students/${rollNo}`, { method: 'PUT' })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Student updated successfully");
+                    window.location.href = "dashboard.html"
+                })
+                .catch(err => console.log(err))
+        }
+    </script>
 </body>
+
 </html>

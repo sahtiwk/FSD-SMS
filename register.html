@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
             margin-top: 10px;
             padding: 8px 14px;
             background-color: black;
-            color:white;
+            color: white;
         }
 
         .note {
@@ -40,6 +41,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <form action="dashboard.html">
@@ -48,10 +50,36 @@
             <label for="email">Email: </label> <input id="email" type="text" placeholder="email"><br>
             <label for="password">Password: </label> <input id="password" type="password"> <br>
             <label for="confirm-password">Confirm Password: </label> <input id="confirm-password" type="password"><br>
-            <button type="submit">Register</button>
+            <button type="submit" onclick="save()">Register</button>
         </form>
     </div>
 
     <p class="note">Already have an account? Go here to <a href="login.html">login</a></p>
+    <script>
+        async function save() {
+            event.preventDefault();
+            uname = document.getElementById("username").value;
+            email = document.getElementById("email").value;
+            pass = document.getElementById("password").value;
+            cp = document.getElementById("confirm-password").value;
+
+            if (pass != cp) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            await fetch('http://localhost:3001/users',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: uname, email: email, password: pass })
+                })
+                .then(response => response.json())
+                .catch(err => console.log(err))
+
+            window.location.href = "dashboard.html"
+        }
+    </script>
 </body>
+
 </html>
